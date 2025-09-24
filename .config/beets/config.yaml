@@ -1,0 +1,65 @@
+
+# prod
+directory: /home/cmdr/music/library/     # Library directory to store music.
+library: /home/cmdr/music/.library.db     # Database file to store library state and metada.
+
+# test env
+#directory: /home/cmdr/tmp/library     # Library directory to store music.
+#library: /home/cmdr/tmp/.beets-lib.db      # Database file to store library state and metada.
+
+import:
+  move: yes
+  copy: no
+  write: yes
+
+
+
+
+#In addition to default, comp, and singleton, you can condition path queries
+#based on beets queries see https://beets.readthedocs.io/en/stable/reference/query.html.
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: Non-Album/$artist/$title
+    comp: Compilations/$album%aunique{}/$track $title
+
+
+plugins: convert discogs
+
+convert:
+  # main set converted music destinantion directory
+  dest: /home/cmdr/music/mirror-mp3
+  # testing env output folder
+  #dest: /home/cmdr/tmp/mirror-mp3
+  paths:
+      default: $albumartist/$album%aunique{}/$track $title
+      singleton: Non-Album/$artist/$title
+      comp: Compilations/$album%aunique{}/$track $title
+  auto: no
+  embed: yes   # embed albumart in converted files
+  threads: 12   # number of threads to use while encoding
+
+  ffmpeg: /usr/bin/ffmpeg
+  format: mp3
+  formats:
+    mp3:
+      command: ffmpeg -i $source -ab 320k -ac 2 -y -map_metadata 0 -id3v2_version 3 $dest
+      extension: mp3
+    flac:
+     command: ffmpeg -i $source -ab 320k -ac 2 -vn -y -map_metadata 0 -id3v2_version 3 $dest
+     extension: flac
+
+#musicbrainz:
+#  host: musicbrainz.org
+#  https: no
+#  ratelimit: 1
+#  ratelimit_interval: 1.0
+#  search_limit: 5
+#  extra_tags: []
+#  genres: no
+#  external_ids:
+#    discogs: yes   
+#    bandcamp: yes
+#    spotify: yes
+#    beatport: yes
+
+

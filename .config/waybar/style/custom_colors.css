@@ -1,0 +1,28 @@
+/*Main Accent*/
+@define-color accent_main #00FFF7; /*Hologram Cyan*/
+@define-color accent_var1 #00D9FB; /*Tron Cyan*/
+@define-color accent_var2 #00B3FF; /*Cyber Sky*/
+@define-color accent_deep #0078C7; /*Deep Electric Blue*/
+@define-color accent_dark #003C8F; /*Neon Shadow*/
+
+/*Highlight*/
+@define-color highlight_bright #FFDD00; /*Tech Gold*/
+@define-color highlight_dark #FFB000; /*Neon Amber*/
+
+/*complements*/
+/*https://colorkit.co/color-palette-generator/FF007F-ff62e5-D400ff-8b00ff-2b005e*/
+@define-color complement_main #FF007F; /*Neon Magenta*/
+@define-color complement_var1 #FF62E5; /*Hyper Pink*/
+@define-color complement_var2 #D400FF; /*Plasma Violet*/
+@define-color complement_deep #8B00FF; /*Ultra Violet*/
+@define-color complement_dark #2B005E; /*Synthwave indigo*/
+
+
+/*Indicators*/
+@define-color danger #FD1C03; /*Blazing Crimson*/
+@define-color warning #F5A623; /*Glitch Orange*/
+@define-color good #39FF14; /*Hacker Green*/
+
+/*Black*/
+@define-color 21 #0A001F; /*Deep Space Blue*/
+@define-color 22 #111111; /*Cyber Black*/
