@@ -1,0 +1,100 @@
+/*
+
+---Main Accent---
+accent_main         #00F0F0 Hologram Cyan
+accent_secondary    #1AC5B0
+accent_var1         #00D9FB Tron Cyan
+accent_var2         #00B3FF Cyber Sky
+accent_deep         #0078C7 Deep Electric Blue
+
+00F0F0-1AC5B0-00B3FF-FFDD00-FFB000-0A001F-111111-FF007F-D400FF-8B00FF
+
+---Highlight---
+highlight_bright    #FFDD00 Tech Gold
+highlight_dark      #FFB000 Neon Amber
+
+---complements---
+https://colorkit.co/color-palette-generator/FF007F-ff62e5-D400ff-8b00ff-2b005e
+complement_main     #FF007F Neon Magenta
+complement_var1     #FF62E5 Hyper Pink
+complement_var2     #D400FF Plasma Violet
+complement_deep     #8B00FF Ultra Violet
+complement_dark     #2B005E Synthwave indigo
+
+---Indicators---
+danger              #FD1C03 Blazing Crimson
+warning             #F5A623 Glitch Orange
+good                #39FF14 Hacker Green
+
+---Black---
+black_blue          #0A001F; Deep Space Blue
+black_dark          #111111 Cyber Black
+
+Role	        Color Name	        Hex Code	Usage Suggestion
+Primary Yellow	Neon Yellow	        #FCEE09	    Accent buttons, highlights, icons
+Primary Cyan	Electric Cyan	    #00FFF7	    Active states, highlights, UI glow effects
+Dark Background	Cyber Black	        #0A0F14	    Main background color
+Mid Background	Deep Gray Blue	    #1B2A33	    Side panels, modals
+UI Contrast	    Laser Purple	    #8A00FF	    Secondary highlights, hover states
+Text Primary	Light Cyan White	#E0FFFF	    Primary text on dark backgrounds
+Text Secondary	Soft Steel Gray	    #8C9FA7	    Subtext, placeholders
+Error/Warning	Neon Magenta	    #FF005E	    Error messages or warnings
+Border/Divider  Dim Neon Blue	    #1F3A93	    Border elements or subtle lines
+*/
+
+*{
+    font-family: JetBrainsMono-Regular,icons,SymbolsNerdFont,FontAwesome6Free, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 0;
+    font-size: 100%;
+    padding: 0px;
+    margin-top: 1px;
+    margin-bottom: 1px;   
+}
+
+window#waybar {
+    background-color: #1B2A33;          /*Mid Background*/
+    color: #111111;                     /*Primary Yellow*/
+    border-bottom: 2px solid #1F3A93;   /*Border/Divider*/
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#clock {
+    background-color: #00F0F0; /*Hologram Cyan*/
+}
+
+#custom-weather {
+    background-color: #1AC5B0; /*Tron Cyan*/
+}
+
+#custom-battery {
+    background-color: #00D9FB; /*Tron Cyan*/
+}
+
+#backlight {
+    background-color: #00F0F0; /*Hologram Cyan*/
+}
+
+#temperature {
+    background-color: #00D9FB; /*Tron Cyan*/
+}
+
+#memory {
+    background-color: #00F0F0; /*Hologram Cyan*/
+}
+
+#cpu {
+    background-color: #00D9FB; /*Tron Cyan*/
+}
+
+#custom-spacer1 {
+  font-size: 10pt;
+  font-weight: bold;
+  color: #00F0F0;
+  background: #00F0F0;
+}
+
