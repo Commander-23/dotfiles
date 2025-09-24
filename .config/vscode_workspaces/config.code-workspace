@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": ".."
+			"path": "/home/cmdr/.config"
 		},
 		{
-			"path": "../../dotfiles"
+			"path": "/home/cmdr/dotfiles"
 		}
 	]
 }
