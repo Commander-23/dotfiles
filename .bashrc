@@ -51,6 +51,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export LINUXTOOLBOXDIR="$HOME/runs"
 
 alias cmdr="$LINUXTOOLBOXDIR/cmdr.sh"
+alias check-repo-status="$LINUXTOOLBOXDIR/check_repo_status.sh"
 
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
