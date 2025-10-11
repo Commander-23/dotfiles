@@ -74,10 +74,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 
 # Seeing as other scripts will use it might as well export it
-export LINUXTOOLBOXDIR="$HOME/runs"
+export LINUXTOOLBOXDIR="${HOME}/runs"
 
 alias cmdr="$LINUXTOOLBOXDIR/cmdr.sh"
-alias check-repo-status="$LINUXTOOLBOXDIR/check_repo_status.sh"
+alias check-repo-status="${LINUXTOOLBOXDIR}/check_repo_status.sh"
 
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 
@@ -95,3 +95,7 @@ alias diskspace="du -S | sort -n -r |more"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Bitwarden SSH key agent config
+# https://bitwarden.com/help/ssh-agent/
+export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
