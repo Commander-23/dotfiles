@@ -17,8 +17,97 @@ fi
 # source/load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+
+#######################################################
+# EXPORTS
+#######################################################
+
+# Disable the bell
+if [[ $iatest -gt 0 ]]; then bind "set bell-style visible"; fi
+
+
+# set up XDG folders
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# custom folders
+export LINUXTOOLBOXDIR="${HOME}/runs"
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+#######################################################
+# Alias
+#######################################################
+
+alias cmdr="$LINUXTOOLBOXDIR/cmdr.sh"
+alias check-repo-status="${LINUXTOOLBOXDIR}/check_repo_status.sh"
+
+if (( $+commands[apt-get] )); then
+  alias apt-get='sudo apt-get'
+elif (( $+commands[pacman] )); then
+  alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+
+fi
+
+
+# Directory 
+alias home='cd ~'
+alias bd='cd "$OLDPWD"'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Alias's for multiple directory listing commands
+
+
+
+alias la='ls -Alh'                # show hidden files
+# alias lf="ls -l | egrep -v '^d'"  # files only
+# alias ldir="ls -l | egrep '^d'"   # directories only
+# alias lla='ls -Al'                # List and Hidden Files
+# alias las='ls -A'                 # Hidden Files
+
+alias lr='ls -lRh'                # recursive ls
+# alias lm='ls -alh |more'          # pipe through 'more'
+alias ll='ls -Fls'                # long listing format
+alias lw='ls -xAh'                # wide listing format
+ 
+# alias labc='ls -lap'              # sort by alphabet
+# alias lx='ls -lXBh'               # sort by extension
+# alias lk='ls -lSrh'               # sort by size
+# alias lc='ls -ltcrh'              # sort by change time
+# alias lu='ls -lturh'              # sort by access time
+# alias lt='ls -ltrh'               # sort by date
+
+alias diskspace="du -S | sort -n -r |more"
+
+# Aliases
+alias ls='ls --color'
+
+
+#######################################################
+# Prompt & Plugins
+#######################################################
+
 # add Powerlevel10k terminal line
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # load plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -41,26 +130,12 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
 
 
 # Completion styling
@@ -70,27 +145,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls='ls --color'
-
-# Seeing as other scripts will use it might as well export it
-export LINUXTOOLBOXDIR="${HOME}/runs"
-
-alias cmdr="$LINUXTOOLBOXDIR/cmdr.sh"
-alias check-repo-status="${LINUXTOOLBOXDIR}/check_repo_status.sh"
-
-alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
-
-# Change directory aliases
-alias home='cd ~'
-alias bd='cd "$OLDPWD"'
-alias cd..='cd ..'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
-alias diskspace="du -S | sort -n -r |more"
 
 # Shell integrations
 eval "$(fzf --zsh)"
