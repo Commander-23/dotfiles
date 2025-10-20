@@ -1,0 +1,17 @@
+[user]
+    name = cmdr
+    email = cmdr@commander23.net
+
+[core]
+    editor = nano
+    autocrlf = input
+    excludesfile = ~/.config/git/ignore
+
+[init]
+    defaultbranch=main
+
+[color]
+    ui = auto
+
+[credential]
+    helper = store
