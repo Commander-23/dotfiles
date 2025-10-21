@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+palette:
+    yellowMain: '#f1e713'
+    yellowDarker: '#d8d62b'
+    yellowLight: '#beca5e'
+    yellowGray: '#a1bc79'
+    BlueGray: '#71a797'
+    blueBright: '#1f839b'
+    blueDark: '#103c55'
+console_title_template: '{{ .Shell }} in {{ .Folder }}'
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: path
+        style: diamond
+        powerline_symbol: "\ue0c7\u2593"
+        foreground: "#p:yellowMain"
+        background: "#:blueDark"
+        properties:
+          style: folder
+version: 3
+final_space: true

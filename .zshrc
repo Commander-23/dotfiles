@@ -1,9 +1,9 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+### Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+### Initialization code that may require console input (password prompts, [y/n]
+### confirmations, etc.) must go above this block; everything else may go below.
+###if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+###  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+###fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -62,6 +62,10 @@ elif (( $+commands[pacman] )); then
 
 fi
 
+#ssh connections
+alias ssh-dev="ssh dev.commander23.net -i ~/.ssh/blackIce_dev"
+alias ssh-game="ssh dev.commander23.net -i ~/.ssh/blackIce_game"
+alias ssh-media="ssh dev.commander23.net -i ~/.ssh/blackIce_media"
 
 # Directory 
 alias home='cd ~'
@@ -77,9 +81,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # Alias's for multiple directory listing commands
-
-
-
 alias la='ls -Alh'                # show hidden files
 # alias lf="ls -l | egrep -v '^d'"  # files only
 # alias ldir="ls -l | egrep '^d'"   # directories only
@@ -109,9 +110,12 @@ alias ls='ls --color'
 #######################################################
 
 # add Powerlevel10k terminal line
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+#zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#OHMYPOSH
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/unicorn.json)"
 
 # load plugins
 zinit light zsh-users/zsh-syntax-highlighting
