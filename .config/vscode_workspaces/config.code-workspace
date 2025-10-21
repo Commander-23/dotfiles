@@ -6,5 +6,8 @@
 		{
 			"path": "/home/cmdr/dotfiles"
 		}
-	]
+	],
+	"settings": {
+		"editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace"
+	}
 }
