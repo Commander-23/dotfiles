@@ -1,0 +1,19 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[palette]
+
+  yellow.main = '#f1e713'
+  yellow.darker = '#d8d62b'
+  yellow.light = '#beca5e'
+  yellow.gray = '#a1bc79'
+  Blue.gray = '#71a797'
+  blue.bright = '#1f839b'
+  blue.dark = '#103c55'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  
