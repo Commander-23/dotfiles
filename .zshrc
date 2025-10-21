@@ -65,6 +65,10 @@ fi
 
 # Directory 
 alias home='cd ~'
+alias runs='cd ~/runs'
+alias dotfiles='cd ~/dotfiles'
+alias srz='cd ~/systemrelevanz'
+alias notes='~/notes'
 alias bd='cd "$OLDPWD"'
 alias cd..='cd ..'
 alias ..='cd ..'
