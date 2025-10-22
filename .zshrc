@@ -115,7 +115,7 @@ alias ls='ls --color'
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #OHMYPOSH
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/unicorn.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/themes/free-ukraine.omp.json)"
 
 # load plugins
 zinit light zsh-users/zsh-syntax-highlighting
