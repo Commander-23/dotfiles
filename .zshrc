@@ -35,6 +35,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # custom folders
 export LINUXTOOLBOXDIR="${HOME}/runs"
 
+# ad oh-my-posh install dir to path on debian based system
+export PATH=$PATH:/home/cmdr/.local/bin
+
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
