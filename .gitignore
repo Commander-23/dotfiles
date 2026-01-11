@@ -1,2 +1,4 @@
 .config/beets/discogs_token.json
 .config/beets/state.picklegit
+
+.config/btop/*
