@@ -25,6 +25,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Disable the bell
 if [[ $iatest -gt 0 ]]; then bind "set bell-style visible"; fi
 
+# Node version manager script's
+source /usr/share/nvm/init-nvm.sh
+
 
 # set up XDG folders
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -157,3 +160,7 @@ eval "$(zoxide init --cmd cd zsh)"
 # Bitwarden SSH key agent config
 # https://bitwarden.com/help/ssh-agent/
 export SSH_AUTH_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
