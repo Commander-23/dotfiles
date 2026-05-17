@@ -57,6 +57,7 @@ setopt hist_find_no_dups
 
 alias cmdr="$LINUXTOOLBOXDIR/cmdr.sh"
 alias check-repo-status="${LINUXTOOLBOXDIR}/check_repo_status.sh"
+alias grayjay="~/runs/Grayjay >> /dev/null &"
 
 if (( $+commands[apt-get] )); then
   alias apt-get='sudo apt-get'
